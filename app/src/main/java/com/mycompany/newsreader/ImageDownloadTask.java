@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ImageView;
 
 import java.io.InputStream;
@@ -79,7 +80,7 @@ public class ImageDownloadTask extends AsyncTask<String, Void, Bitmap>{
             }
             catch(Exception e)
             {
-                System.out.println("Error in downloading image from " +url);
+                Log.e("NewsReader","Error in downloading image from " + url);
             }
             if(httpConnection != null)
                 httpConnection.disconnect();

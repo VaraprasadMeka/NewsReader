@@ -1,5 +1,7 @@
 package com.mycompany.newsreader;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -54,7 +56,7 @@ public class JsonDataProvider {
         }
         catch(Exception e)
         {
-            e.printStackTrace();
+            Log.e("NewsReader","Error in downloading JSON message");
         }
 
         return returnCode;
@@ -87,7 +89,7 @@ public class JsonDataProvider {
         }
         catch(Exception e)
         {
-            e.printStackTrace();
+            Log.e("NewsReader","Error in parsing JSON message");
         }
 
         return returnCode;
