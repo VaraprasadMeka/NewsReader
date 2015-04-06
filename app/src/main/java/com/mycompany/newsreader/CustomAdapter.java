@@ -33,7 +33,9 @@ public class CustomAdapter extends ArrayAdapter<DataContainer> {
         this.context = context;
         this.resource = resource;
         this.newsList = objects;
-        descriptionView_margin = convertDPtoPixels(100); // converting dp to px
+
+        descriptionView_margin = (int)Math.ceil(
+                context.getResources().getDimension(R.dimen.image_width));
     }
 
     @Override
@@ -98,16 +100,5 @@ public class CustomAdapter extends ArrayAdapter<DataContainer> {
         TextView titleView;
         TextView descriptionView;
         ImageView imageView;
-    }
-
-    private int convertDPtoPixels(int dp)
-    {
-        ActionBarActivity activity = (ActionBarActivity)context;
-        DisplayMetrics metrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        float density = metrics.density;
-        int pixels = (int)Math.ceil(dp * density);
-
-        return pixels;
     }
 }
